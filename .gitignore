@@ -8,6 +8,7 @@ node_modules
 .ipynb_checkpoints/
 __pycache__/
 embeddings/
+swahili_afroxlmr/
 *.pt
 *.joblib
 *errors.csv
