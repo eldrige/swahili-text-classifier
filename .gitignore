@@ -11,3 +11,4 @@ embeddings/
 swahili_afroxlmr/
 *errors.csv
 *.zip
+*.safetensors
