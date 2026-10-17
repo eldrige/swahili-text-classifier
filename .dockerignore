@@ -1,0 +1,12 @@
+.venv
+.git
+.ipynb_checkpoints
+__pycache__
+*.ipynb
+*.md
+embeddings
+swahili_afroxlmr
+*.pt
+*errors.csv
+*.zip
+.env*

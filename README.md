@@ -29,4 +29,22 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
-The BiGRU checkpoint is gitignored because it is 57 MB. Copy `swahili_bigru.pt` next to `app.py` before launching. For Hugging Face Spaces, upload that file (Git LFS) with `app.py` and `requirements.txt`.
+The app binds to `0.0.0.0` and uses `PORT` (default `7860`). Checkpoints (`swahili_baseline.joblib`, `swahili_bigru.pt`, `swahili_afroxlmr/`) are gitignored because of size.
+
+## Deploy on DigitalOcean App Platform
+
+This path uses the TF-IDF baseline so a 512 MB instance is enough (no PyTorch). Train or copy `swahili_baseline.joblib` next to `app.py` first.
+
+1. Force-add the checkpoint (it is gitignored):
+
+```bash
+git add -f swahili_baseline.joblib Dockerfile requirements-do.txt app.py
+git commit -m "Add DigitalOcean baseline deploy"
+git push
+```
+
+2. In DigitalOcean: **Create** → **Apps** → GitHub repo → Dockerfile.
+3. HTTP port `8080`, smallest instance (`apps-s-1vcpu-0.5gb`). Optional env: `SWAHILI_MODEL=baseline`.
+4. Open the `*.ondigitalocean.app` URL after the build.
+
+See `.do/app.yaml` for a sample app spec. BiGRU / AfroXLMR need PyTorch and a larger droplet or App Platform instance; they are not in the default `Dockerfile`.

@@ -1,4 +1,4 @@
-"""Swahili news topic classifier for local use and Hugging Face Spaces.
+"""Swahili news topic classifier for local use and DigitalOcean App Platform.
 
 Loads the strongest checkpoint that is present: AfroXLMR, then the BiGRU,
 then the TF-IDF baseline. The text cleaner is the same one used in the notebooks.
@@ -195,4 +195,5 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
-    demo.launch()
+    port = int(os.environ.get("PORT", "7860"))
+    demo.launch(server_name="0.0.0.0", server_port=port)

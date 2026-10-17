@@ -1,0 +1,16 @@
+name: swahili-news-classifier
+region: fra
+services:
+  - name: web
+    dockerfile_path: Dockerfile
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    github:
+      repo: YOUR_GITHUB_USER/swahili_txt_classification
+      branch: main
+      deploy_on_push: true
+    envs:
+      - key: SWAHILI_MODEL
+        value: baseline
+        scope: RUN_TIME

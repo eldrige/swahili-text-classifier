@@ -9,7 +9,5 @@ node_modules
 __pycache__/
 embeddings/
 swahili_afroxlmr/
-*.pt
-*.joblib
 *errors.csv
 *.zip
