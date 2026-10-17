@@ -1,0 +1,6 @@
+gradio>=4.0,<5
+huggingface_hub<1
+torch
+numpy
+scikit-learn
+joblib
