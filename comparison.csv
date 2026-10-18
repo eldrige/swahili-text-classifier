@@ -1,4 +1,4 @@
 model,test_accuracy,test_macro_f1,train_minutes,checkpoint_mb,n_params
-TF-IDF + Logistic Regression,0.8803,0.8114,3.96,17.92,1200006.0
-fastText cc.sw.300 + BiGRU,0.8895,0.8203,41.6,56.72,13936182.0
-AfroXLMR-base (not run yet),,,,,
+TF-IDF + Logistic Regression,0.8803,0.8114,3.96,17.92,1200006
+fastText cc.sw.300 + BiGRU,0.8895,0.8203,41.6,56.72,13936182
+AfroXLMR-base,0.9191,0.867,28.0,1129.3,278048262
