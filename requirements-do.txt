@@ -1,6 +1,11 @@
+# Baseline-only image for DigitalOcean. No PyTorch: the TF-IDF model does not need it.
+# scikit-learn, numpy, scipy and joblib match the versions that pickled models/swahili_baseline.joblib.
 gradio==4.44.1
 huggingface_hub==0.25.2
-torch
-numpy
-scikit-learn
-joblib
+scikit-learn==1.6.1
+numpy==2.0.2
+scipy==1.13.1
+joblib==1.5.3
+# gradio 4.44 breaks with pydantic >= 2.11 and newer FastAPI/Starlette ("unhashable type: 'dict'").
+pydantic==2.10.6
+fastapi==0.115.6

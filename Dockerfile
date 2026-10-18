@@ -2,7 +2,9 @@ FROM python:3.11-slim
 
 WORKDIR /app
 ENV PYTHONUNBUFFERED=1 \
-    PORT=8080
+    PORT=8080 \
+    SWAHILI_MODEL=baseline \
+    GRADIO_ANALYTICS_ENABLED=False
 
 COPY requirements-do.txt .
 RUN pip install --no-cache-dir -r requirements-do.txt
