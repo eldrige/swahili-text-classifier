@@ -1,6 +1,6 @@
 # Topic Classification of Swahili News: A Comparison of TF-IDF, fastText + BiGRU, and AfroXLMR
 
-**Author:** Eldrige
+**Author:** Eldrige\
 **Repository:** `swahili_txt_classification`
 
 ---
