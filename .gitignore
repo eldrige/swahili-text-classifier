@@ -8,7 +8,8 @@ node_modules
 .ipynb_checkpoints/
 __pycache__/
 embeddings/
-swahili_afroxlmr/
+models/swahili_afroxlmr/*
+!models/swahili_afroxlmr/best_epoch.txt
 *errors.csv
 *.zip
 *.safetensors

@@ -14,6 +14,7 @@ import gradio as gr
 import numpy as np
 
 ROOT = Path(__file__).resolve().parent
+MODELS_DIR = ROOT / "models"
 
 URL_RE = re.compile(r"https?://\S+|www\.\S+")
 EMAIL_RE = re.compile(r"\S+@\S+")
@@ -146,9 +147,9 @@ def load_afroxlmr(path: Path) -> Predictor:
 
 def resolve_checkpoint() -> Predictor:
     forced = os.environ.get("SWAHILI_MODEL", "").strip().lower()
-    afro = ROOT / "swahili_afroxlmr"
-    bigru = ROOT / "swahili_bigru.pt"
-    baseline = ROOT / "swahili_baseline.joblib"
+    afro = MODELS_DIR / "swahili_afroxlmr"
+    bigru = MODELS_DIR / "swahili_bigru.pt"
+    baseline = MODELS_DIR / "swahili_baseline.joblib"
 
     if forced in {"afroxlmr", "xlmr", "transformer"}:
         return load_afroxlmr(afro)
@@ -165,7 +166,7 @@ def resolve_checkpoint() -> Predictor:
         return load_baseline(baseline)
     raise FileNotFoundError(
         "No checkpoint found. Place swahili_bigru.pt, swahili_baseline.joblib, "
-        "or the swahili_afroxlmr/ folder next to app.py."
+        "or the swahili_afroxlmr/ folder in models/."
     )
 
 
