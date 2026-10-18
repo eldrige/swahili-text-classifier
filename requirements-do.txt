@@ -1,6 +1,6 @@
 # Baseline-only image for DigitalOcean. No PyTorch: the TF-IDF model does not need it.
 # scikit-learn, numpy, scipy and joblib match the versions that pickled models/swahili_baseline.joblib.
-gradio==4.44.1
+gradio==6.16.0
 huggingface_hub==0.25.2
 scikit-learn==1.6.1
 numpy==2.0.2
